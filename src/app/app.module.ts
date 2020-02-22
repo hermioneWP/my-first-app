@@ -7,6 +7,7 @@ import { ServersComponent } from './servers/servers.component';
 import { WarningComponent } from './warning/warning.component';
 import { SuccessComponent } from './success/success.component';
 import { AssigmentDataBindingComponent } from './assigment-data-binding/assigment-data-binding.component';
+import { AssigmentDirectivesComponent } from './assigment-directives/assigment-directives.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AssigmentDataBindingComponent } from './assigment-data-binding/assigmen
     ServersComponent,
     WarningComponent,
     SuccessComponent,
-    AssigmentDataBindingComponent
+    AssigmentDataBindingComponent,
+    AssigmentDirectivesComponent
   ],
   imports: [
     BrowserModule,

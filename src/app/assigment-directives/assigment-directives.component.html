@@ -1,0 +1,11 @@
+<button class="btn btn-primary" (click)="onClick()" *ngIf="!display;else hide">Display details</button>
+<ng-template #hide>
+  <button class="btn btn-primary" (click)="onClick()">Hide details</button>
+</ng-template>
+<p *ngIf="display" >Secret password = tuna</p>
+<p
+  *ngFor="let click, of clicks, let i = index"
+  [ngStyle]="{backgroundColor:i>3?'blue':''}"
+  [ngClass]="{whiteText: i>3}">
+  {{click}}
+</p>
