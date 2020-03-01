@@ -1,13 +1,36 @@
 <div class="container">
   <app-cockpit
     (serverCreated)="onServerAdded($event)"
-    (bluePrintCreated)="onABlueprintAdded($event)"></app-cockpit>
+    (bpCreated)="onABlueprintAdded($event)"></app-cockpit>
 </div>
 <hr>
 <div class="row">
   <div class="col-xs-12">
-    <app-server-element *ngFor="let serverElement of serverElements" [srvElement]="serverElement"></app-server-element>
+    <button class="btn btn-primary" (click)="onChangeFirst()">Change first element</button>
+    <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy first element</button>
+    <app-server-element
+      *ngFor="let serverElement of serverElements"
+      [srvElement]="serverElement"
+      [name]="serverElement.name">
+      <p #contentParagraph>
+        <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+        <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+      </p>
+    </app-server-element>
   </div>
 </div>
-
+<hr>
+<app-game-control (newNumber)="addNumber($event)"></app-game-control>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <div *ngFor="let num of numbers">
+        <app-odd *ngIf="num%2===1; else even" [num]="num"></app-odd>
+        <ng-template #even>
+          <app-even [num]="num"></app-even>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
 
