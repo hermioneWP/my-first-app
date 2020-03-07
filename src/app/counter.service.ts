@@ -1,15 +1,17 @@
-import {Injectable} from "@angular/core";
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class CounterService {
-  activeToInactive : number = 0;
-  inactiveToActive : number = 0;
+  activeToInactive = 0;
+  inactiveToActive = 0;
 
-  activeToInactiveInc(){
+  activeToInactiveInc() {
     this.activeToInactive++;
+    return this.activeToInactive;
   }
 
-  inactiveToActiveInc(){
+  inactiveToActiveInc() {
     this.inactiveToActive++;
+    return this.inactiveToActive;
   }
 }
